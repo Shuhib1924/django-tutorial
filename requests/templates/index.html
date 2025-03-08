@@ -11,9 +11,7 @@
 	</head>
 	<body>
 		{% for post in posts %}
-		<div>{{post.autor}}</div>
-		<div>{{post.title}}</div>
-		<div>{{post.content}}</div>
+		<div><a href="{% url 'requests:post' post.id %}">{{post.title}}</a></div>
 		<div>{{post.date_posted}}</div>
 		<hr />
 		{% endfor %}
