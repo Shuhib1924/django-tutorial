@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="{% static 'alpine.min.js' %}" defer></script>
+		<script src="{% static 'htmx.min.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'style.min.css' %}" />
+		<title>Document</title>
+	</head>
+	<body>
+		{% for post in posts %}
+		<div>{{post.autor}}</div>
+		<div>{{post.title}}</div>
+		<div>{{post.content}}</div>
+		<div>{{post.date_posted}}</div>
+		<hr />
+		{% endfor %}
+	</body>
+</html>
