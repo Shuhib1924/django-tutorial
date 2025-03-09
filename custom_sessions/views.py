@@ -18,3 +18,8 @@ def delete_session(request):
     request.session.modified = True
     print(f"SESSION: {request.session["key1"]}")
     return HttpResponse(f"{session}")
+
+
+def flush_session(request):
+    request.session.flush()
+    return HttpResponse("session flushed")
