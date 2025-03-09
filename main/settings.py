@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "requests",
     "cookies",
     "middlewares",
+    "custom_sessions",
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    "middlewares.middleware.CustomClassMiddleware",
+    # "middlewares.middleware.CustomClassMiddleware",
 ]
 
 ROOT_URLCONF = "main.urls"

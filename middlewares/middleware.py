@@ -29,8 +29,8 @@ class CustomClassMiddleware:
     def process_exception(self, request, exception):
         print("call process_exception")
         print(exception)
-        # return None
-        return HttpResponse("response from prcoess_exception")
+        return None
+        # return HttpResponse("response from prcoess_exception")
 
     def process_template_response(self, request, response):
         print("call process_template_response")

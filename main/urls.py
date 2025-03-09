@@ -23,4 +23,5 @@ urlpatterns = [
     path("requests/", include("requests.urls")),
     path("cookies/", include("cookies.urls")),
     path("middlewares/", include("middlewares.urls")),
+    path("sessions/", include("custom_sessions.urls")),
 ]
