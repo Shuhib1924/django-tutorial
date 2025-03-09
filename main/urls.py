@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("requests/", include("requests.urls")),
     path("cookies/", include("cookies.urls")),
+    path("middlewares/", include("middlewares.urls")),
 ]

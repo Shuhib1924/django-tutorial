@@ -11,3 +11,11 @@ def set1(request):
 
 def get1(request):
     return HttpResponse(f"<h1>get cookie</h1><div>{request.COOKIES['key2']}</div>")
+
+
+def delete1(request):
+    response = HttpResponse(
+        f"<h1>delete cookie</h1> <div>{request.COOKIES['key1']}</div>"
+    )
+    response.delete_cookie("key1")
+    return response
