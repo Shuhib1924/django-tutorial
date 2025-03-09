@@ -1,3 +1,6 @@
+from django.http import HttpResponse
+
+
 class CustomClassMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -22,3 +25,15 @@ class CustomClassMiddleware:
         print(f"view_args - {view_args}")
         print(f"view_kwargs - {view_kwargs}")
         return None
+
+    def process_exception(self, request, exception):
+        print("call process_exception")
+        print(exception)
+        # return None
+        return HttpResponse("response from prcoess_exception")
+
+    def process_template_response(self, request, response):
+        print("call process_template_response")
+        response.context_data["process_context"] = "context from template_response"
+        response.context_data["content"] = "content from middleware"
+        return response
