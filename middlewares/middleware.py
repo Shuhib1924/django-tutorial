@@ -1,10 +1,10 @@
-def CustomMiddleware(get_response):
-    print("init middleware by runserver")
+class CustomClassMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+        print("init middleware once by runserver")
 
-    def middleware(request):
+    def __call__(self, request):
         print("Before view")
-        response = get_response(request)
+        response = self.get_response(request)
         print("After view")
         return response
-
-    return middleware
